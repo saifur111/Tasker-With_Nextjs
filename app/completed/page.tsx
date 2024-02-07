@@ -1,10 +1,10 @@
 "use client"
 import React from 'react'
 
-const CompletedPage = () => {
+const page = () => {
   return (
     <div>CompletedPage</div>
   )
 }
 
-export default CompletedPage
+export default page

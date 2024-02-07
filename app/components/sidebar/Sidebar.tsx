@@ -8,6 +8,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { arrowLeft, bars, logout } from "@/app/utils/Icons";
 import Button from "../button/Button";
+import { UserButton, useClerk } from "@clerk/nextjs";
 
 const Sidebar = () => {
 
@@ -19,6 +20,7 @@ const Sidebar = () => {
   };
   const router = useRouter();
   const pathname = usePathname();
+  const { signOut } = useClerk();
 
   const handleClick = (link: string) => {
     router.push(link);
@@ -34,7 +36,7 @@ const Sidebar = () => {
           <Image width={70} height={70} src={imageUrlstatic} alt="profile" />
         </div>
         <div className="user-btn absolute z-20 top-0 w-full h-full">
-          {/* <UserButton /> */}
+          <UserButton />
         </div>
         <h1 className="capitalize">
           {firstName} {lastName}
@@ -67,7 +69,7 @@ const Sidebar = () => {
           fs={"1.2rem"}
           icon={logout}
           click={() => {
-            // signOut(() => router.push("/signin"));
+            signOut(() => router.push("/signin"));
           }}
         />
       </div>

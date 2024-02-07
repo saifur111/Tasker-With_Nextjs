@@ -1,10 +1,10 @@
 "use client"
 import React from 'react'
 
-const ImportantPage = () => {
+const page = () => {
   return (
     <div>ImportantPage</div>
   )
 }
 
-export default ImportantPage
+export default page

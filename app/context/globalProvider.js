@@ -32,6 +32,8 @@ const GlobalProvider = ({ children }) => {
     <GlobalContext.Provider
       value={{
         theme,
+        collapsed, 
+        collapseMenu,
       }}
     >
       <GlobalUpdateContext.Provider value={{}}>
